@@ -13,8 +13,7 @@ class MovingAverage {
     public double next(int val) {
         sum += val;
         if (q.size() == size) {
-            sum -= q.peek();
-            q.poll();
+            sum -= q.remove();            
         }
         q.offer(val);            
         return sum / q.size();
